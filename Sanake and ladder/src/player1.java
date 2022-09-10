@@ -13,7 +13,7 @@ public class player1 {
         while (playerA < 100) {
             int DieRoll = (int) Math.floor(Math.random() * 10) % 7;
             // (UC6) number of times the dice was played
-            //count++;
+            count++;
             System.out.println("Player A roll die " + "he move " + DieRoll + " Steps");
             compare = (int) Math.floor(Math.random() * 10) % 3;
             // (UC3)The Player then checks for a Option. They are No Play,Ladder or Snake.
@@ -37,7 +37,7 @@ public class player1 {
                 System.out.println("Player A position is 100");
             }
             System.out.println("Player A final position " + playerA);
-            //System.out.println("times the dice was played to win the game is " + count);
+            System.out.println("times the dice was played to win the game is " + count);
         }
     }
 }
