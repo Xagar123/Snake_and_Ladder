@@ -4,40 +4,61 @@ public class player1 {
         System.out.println("Welcome to snake and ladder Game");
         System.out.println("Both the player is at zero position");
         int playerA = 0;
+        int playerB = 0;
         int noPlay = 0;
         int ladder = 1;
         int snake = 2;
         int count = 0;
         int compare = 1;
-        // (UC4)Repeat till the Player reaches the winning position 100.
-        while (playerA < 100) {
-            int DieRoll = (int) Math.floor(Math.random() * 10) % 7;
-            // (UC6) number of times the dice was played
+        while (playerA < 100 || playerB <100) {
+            int DieRollA = (int) Math.floor(Math.random() * 10) % 7;
+            int DieRollB = (int) Math.floor(Math.random() * 10) % 7;
             count++;
-            System.out.println("Player A roll die " + "he move " + DieRoll + " Steps");
+            System.out.println("Player A roll die " + "he move " + DieRollA + " Steps");
             compare = (int) Math.floor(Math.random() * 10) % 3;
-            // (UC3)The Player then checks for a Option. They are No Play,Ladder or Snake.
             switch (compare) {
                 case 0:
                     System.out.println("The player in the same position");
                     break;
                 case 1:
-                    System.out.println("player moves ahead by the " + DieRoll + " number of position");
-                    playerA += DieRoll;
+                    System.out.println("player moves ahead by the " + DieRollA + " number of position");
+                    playerA += DieRollA;
                     break;
                 case 2:
-                    System.out.println("The player move behind by " + DieRoll + " Moves");
-                    playerA -= DieRoll;
+                    System.out.println("The player move behind by " + DieRollA + " Moves");
+                    playerA -= DieRollA;
             }
-            //(UC5) Ensure the player gets to exact winning position 100.
-            if (playerA < 100) {
-                System.out.println("Player A position " + playerA);
-            } else {
+            System.out.println("Player B roll die " + "he move " + DieRollB + " Steps");
+            compare = (int) Math.floor(Math.random() * 10) % 3;
+            switch (compare) {
+                case 0:
+                    System.out.println("The player in the same position");
+                    break;
+                case 1:
+                    System.out.println("player moves ahead by the " + DieRollB + " number of position");
+                    playerB += DieRollB;
+                    break;
+                case 2:
+                    System.out.println("The player move behind by " + DieRollB + " Moves");
+                    playerB -= DieRollB;
+            }
+
+            if (playerA > 100) {
                 playerA = 100;
-                System.out.println("Player A position is 100");
+            } else if (playerB > 100) {
+                playerB = 100;
+            } else {
+                System.out.println("Position of player A is " + playerA);
+                System.out.println("Position of player B is " + playerB);
             }
-            System.out.println("Player A final position " + playerA);
-            System.out.println("times the dice was played to win the game is " + count);
         }
+        if(playerA > playerB){
+            System.out.println("Player A win the game");
+        }
+        else {
+            System.out.println("Player B won the game");
+        }
+        //System.out.println("Player A final position " + playerA);
+        System.out.println("times the dice was played to win the game is " + count);
     }
 }
