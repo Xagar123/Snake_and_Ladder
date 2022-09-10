@@ -10,7 +10,7 @@ public class player1 {
         int count = 0;
         int compare = 1;
         // (UC4)Repeat till the Player reaches the winning position 100.
-        //while (playerA < 100) {
+        while (playerA < 100) {
             int DieRoll = (int) Math.floor(Math.random() * 10) % 7;
             // (UC6) number of times the dice was played
             //count++;
@@ -40,4 +40,4 @@ public class player1 {
             //System.out.println("times the dice was played to win the game is " + count);
         }
     }
-//}
+}
