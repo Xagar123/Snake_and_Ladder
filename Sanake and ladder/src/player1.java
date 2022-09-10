@@ -29,13 +29,13 @@ public class player1 {
                     System.out.println("The player move behind by " + DieRoll + " Moves");
                     playerA -= DieRoll;
             }
-            // (UC5) Ensure the player gets to exact winning position 100.
-//            if (playerA < 100) {
-//                System.out.println("Player A position " + playerA);
-//            } else {
-//                playerA = 100;
-//                System.out.println("Player A position is 100");
-//            }
+            //(UC5) Ensure the player gets to exact winning position 100.
+            if (playerA < 100) {
+                System.out.println("Player A position " + playerA);
+            } else {
+                playerA = 100;
+                System.out.println("Player A position is 100");
+            }
             System.out.println("Player A final position " + playerA);
             //System.out.println("times the dice was played to win the game is " + count);
         }
